@@ -91,13 +91,7 @@ class RelacaoController {
 				    println "rr:"+n.value
 				}
 				
-				//redirect(action:show,id:Relacao.get( params.id ).id)
 				
-				//con.executeUpdate("UPDATE RELACAO SET status='URGENTE'")
-				
-				//println "Buraco1:"+res //.replaceAll('\\{','').replaceAll('\\}','').replaceAll('\\"',"'").replaceAll(' ','')
-				
-				//println "REs:"+Relacao.get( params.id ).aplicativo.id
 		
         
 		
