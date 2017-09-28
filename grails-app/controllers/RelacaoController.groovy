@@ -88,8 +88,12 @@ class RelacaoController {
 		def res=''
 				
 				for(n in params.tabela){
-				    println "rr:"+n.value
+				    //println "rr:"+n.value
 				}
+				 def process  =  "grails help".execute()
+				 
+				 println "REs:"+process
+				
 				
 				//redirect(action:show,id:Relacao.get( params.id ).id)
 				
