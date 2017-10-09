@@ -81,29 +81,22 @@ class RelacaoController {
     }
 
     def update = {
-        def relacao = Relacao.get( params.id )
-		
-		def cont=0
-		def arr=[]
-		def res=''
-				
-				for(n in params.tabela){
-				    println "rr:"+n.value
-				}
-				 def process  =  "grails help".execute()
-				 
-				 println "REs:"+process
-				
-				
-				//redirect(action:show,id:Relacao.get( params.id ).id)
-				
-				//con.executeUpdate("UPDATE RELACAO SET status='URGENTE'")
-				
-				//println "Buraco1:"+res //.replaceAll('\\{','').replaceAll('\\}','').replaceAll('\\"',"'").replaceAll(' ','')
-				
-				//println "REs:"+Relacao.get( params.id ).aplicativo.id
-		
         
+		def relacao = Relacao.get( params.id )
+        if(relacao) {
+            relacao.properties = params
+            if(!relacao.hasErrors() && relacao.save()) {
+                flash.message = "Relacao ${params.id} updated"
+                redirect(action:show,id:relacao.id)
+            }
+            else {
+                render(view:'edit',model:[relacao:relacao])
+            }
+        }
+        else {
+            flash.message = "Relacao not found with id ${params.id}"
+            redirect(action:edit,id:params.id)
+        }
 		
     }
 
