@@ -7,7 +7,7 @@ class RelacaoController {
 	def sql = Sql.newInstance("jdbc:sapdb://localhost:7203/NSP","SAPNSP", "Branco09", "com.sap.dbtech.jdbc.DriverSapDB")
     def index = { redirect(action:list,params:params) }
 
-    // Wosp-Core 12/10/2017 16:10
+    // Wosp-Core 12/10/2017 16:10 - Paulo Castro
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
