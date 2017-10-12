@@ -1,13 +1,13 @@
 import java.sql.*;
 import groovy.sql.Sql
-import org.codehaus.groovy.grails.orm.hibernate.support.ClosureEventTriggeringInterceptor as Events
 import java.io.File;
 class RelacaoController {
+    def GerarAppService
     def con = Sql.newInstance("jdbc:postgresql://localhost:5432/app","postgres","root","org.postgresql.Driver")
 	def sql = Sql.newInstance("jdbc:sapdb://localhost:7203/NSP","SAPNSP", "Branco09", "com.sap.dbtech.jdbc.DriverSapDB")
     def index = { redirect(action:list,params:params) }
 
-    // the delete, save and update actions only accept POST requests
+    // Wosp-Core 12/10/2017 16:10
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
@@ -17,6 +17,9 @@ class RelacaoController {
     }
 
     def show = {
+	    def nomeScript='marina'
+		def nomeApp='Paulo'
+	    GerarAppService.criarApp("${nomeScript}","${nomeApp}");					 
 	   
 	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
 		 def valTab='';def valTabArray=[];def valRows ='';def valRowsArray =[]
@@ -81,8 +84,7 @@ class RelacaoController {
     }
 
     def update = {
-        
-		def relacao = Relacao.get( params.id )
+          def relacao = Relacao.get( params.id )
         if(relacao) {
             relacao.properties = params
             if(!relacao.hasErrors() && relacao.save()) {
@@ -97,7 +99,6 @@ class RelacaoController {
             flash.message = "Relacao not found with id ${params.id}"
             redirect(action:edit,id:params.id)
         }
-		
     }
 
     def create = {
