@@ -8,6 +8,9 @@ class RelacaoController {
     def index = { redirect(action:list,params:params) }
 
     // Wosp-Core 12/10/2017 16:10 - Paulo Castro
+	// Umas das açoes que deverá ser feita é:
+	//      1. Mudar a pasta JDK onde nao podera ter espaco no nome - colocar direto no C:
+	//      2. Instalar MINISAP - MAXDB                                 
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
@@ -17,6 +20,7 @@ class RelacaoController {
     }
 
     def show = {
+	
 	    def nomeScript='marina'
 		def nomeApp='Paulo'
 	    GerarAppService.criarApp("${nomeScript}","${nomeApp}");					 
@@ -135,12 +139,10 @@ class RelacaoController {
 		     }
 		}
 		catch(Exception e1){
-		
 		     if(params.tabela==null){
 			   flash.message = "Atribua ao menos uma Tabela!"
 			   redirect(action:create)
-			 }
-			 
+			 }			 
 		     params.tabela.id.each{
 		     def id = Relacao.executeQuery("select count(*) from Relacao")
 			 def valida = Relacao.executeQuery("select count(*) from Relacao where aplicativo_id='"+params.aplicativo.id.toInteger()+"' and tabela_id='"+params.tabela.id.toInteger()+"'")
@@ -161,9 +163,5 @@ class RelacaoController {
 			  redirect(action:create)
 		}
     		
-	   
-	   
-	  
-	   
 	}
 }
