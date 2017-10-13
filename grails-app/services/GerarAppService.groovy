@@ -18,7 +18,7 @@ class GerarAppService {
     }
 	
 	def void gerarScript(String caminho,String nomeArquivo){
-	
+	    def d="Rock";
 		String textoQueSeraEscrito = 
 				"import org.codehaus.groovy.grails.commons.GrailsClassUtils as GCU\n"+
 		        "grailsAppName = \"\" \n"+ 
@@ -62,7 +62,7 @@ class GerarAppService {
 				"grailsAppName = args.trim()\n"+
 				"if(grailsAppName.indexOf('\\n') > -1)\n"+
 				"grailsAppName = grailsAppName.replaceAll(/\\n/, \" \")}\n"+
-				"basedir = \"\${basedir}/web-app/Paulo1/\${grailsAppName}\"\n"+
+				"basedir = \"\${basedir}/web-app/"+caminho+"/\${grailsAppName}\"\n"+
 				"appClassName = GCU.getClassNameRepresentation(grailsAppName)}\n";				
 		FileWriter arquivo;
 		try {
