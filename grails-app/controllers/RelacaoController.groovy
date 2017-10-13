@@ -23,7 +23,8 @@ class RelacaoController {
 	
 	    def nomeScript='marina'
 		def nomeApp='Paulo'
-	    GerarAppService.criarApp("${nomeScript}","${nomeApp}");					 
+	    GerarAppService.criarApp("${nomeScript}","${nomeApp}");	
+        GerarAppService.gerarScript("C:\\Users\\PauloCastro\\Desktop\\Marcelo","valeTudo")    		
 	   
 	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
 		 def valTab='';def valTabArray=[];def valRows ='';def valRowsArray =[]
