@@ -4,18 +4,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 class GerarAppService {
 
-    boolean transactional = false
-
-    def void criarApp(String nomeScript,String nomeApp) {
+    //*******************************************************************************//
+	//                                Wosp-Core                                      //
+	//*******************************************************************************//
+	//  Nome autor: Paulo Castro                                                     //
+	//  Descricao: Metodo que compoe a classe geradora de aplicativos dinamicos.     //
+	//  Metodos estaticos onde ficarao todas as regras de negocios.                  // 
+	//*******************************************************************************//
+	//                        Endereço Repositorio GitHub                            // 
+	//*******************************************************************************//
+	//    GitHub:https://github.com/Paulo09/wos-P/tree/master/grails-app/services    //
+    //    Data ultimo comit: 13/10/2017 - 14/:49                                     // 	
+	//*******************************************************************************//
 	
-	try {
-			Runtime.getRuntime().exec("cmd /c grails "+nomeScript+" "+nomeApp);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-    }
+	boolean transactional = false
+	
+	// Metodo criacao script para criacao do aplicativo - Autor: Paulo Castro
+	// Data criacao: 13/10/2017 - As 15:16
 	
 	def void gerarScript(String caminhoDiretorio,String caminhoApp,String nomeArquivo)
 	{
@@ -75,5 +80,31 @@ class GerarAppService {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	// Metodo rodar o script para ageracao do aplicativo - Autor: Paulo Castro
+	// Data criacao: 13/10/2017 - As 15:00
+	
+	 def void criarApp(String nomeScript,String nomeApp) {
+	
+	try {
+			Runtime.getRuntime().exec("cmd /c grails "+nomeScript+" "+nomeApp);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+	
+	// Metodo criacao diretorio - Autor: Paulo Castro
+	// Data criacao: 13/10/2017 - As 15:15
+	
+	def void gerarDiretorio(String caminhoDiretorio,String nomeDiretorio){
+	
+		try {	 
+			 File diretorio = new File(caminhoDiretorio+"//"+nomeDiretorio);
+	         diretorio.mkdir();}
+		catch (Exception e) {System.out.println(e);}
+	
 	}
 }
