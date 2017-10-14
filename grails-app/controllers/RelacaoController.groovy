@@ -35,10 +35,10 @@ class RelacaoController {
 	      //Diretorio - Dalva
           //Nome Script - vale tudo 
 		  // ${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}
-          // ${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}+'.groovy' 		  
-          GerarAppService.gerarScript("scripts\\","Dalva","nomeScript")    		
+          // ${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}		  
+          GerarAppService.gerarScript("scripts\\","Dalva","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
 		  GerarAppService.gerarDiretorio("web-app\\","Dalva")
-		  GerarAppService.criarApp("valeTudo","${nomeApp}");
+		  GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${nomeApp}");
 		  
 	   
 	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
