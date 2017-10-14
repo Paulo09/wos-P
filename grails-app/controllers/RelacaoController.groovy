@@ -29,16 +29,10 @@ class RelacaoController {
     }
 
     def show = {
-	
-	    def nomeScript='marina'
-		def nomeApp='Paulo'
-	      //Diretorio - Dalva
-          //Nome Script - vale tudo 
-		  // ${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}
-          // ${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}		  
-          GerarAppService.gerarScript("scripts\\","Dalva","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
-		  GerarAppService.gerarDiretorio("web-app\\","Dalva")
-		  GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${nomeApp}");
+		     
+          GerarAppService.gerarScript("scripts\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
+		  GerarAppService.gerarDiretorio("web-app\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")
+		  GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${Relacao.get(params.id).aplicativo}");
 		  
 	   
 	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
@@ -62,7 +56,7 @@ class RelacaoController {
 								 "\n}"+
 								 "\n}";			   
 			   
-			    def criarapp = new File("web-app\\Dalva\\Paulo\\grails-app\\domain\\${valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(0,1).toUpperCase()+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(1,valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').size()).toLowerCase()}.groovy");	
+			    def criarapp = new File("web-app\\${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}\\${Relacao.get(params.id).aplicativo}\\grails-app\\domain\\${valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(0,1).toUpperCase()+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(1,valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').size()).toLowerCase()}.groovy");	
 			        criarapp.write(objClasse); 
 			   
 			   contTab++

@@ -40,5 +40,5 @@ else{
 grailsAppName = args.trim()
 if(grailsAppName.indexOf('\n') > -1)
 grailsAppName = grailsAppName.replaceAll(/\n/, " ")}
-basedir = "${basedir}/web-app/Dalva/${grailsAppName}"
+basedir = "${basedir}/web-app/diretorioApp11/${grailsAppName}"
 appClassName = GCU.getClassNameRepresentation(grailsAppName)}
