@@ -14,8 +14,8 @@ class RelacaoController {
     //************************************************************************************
     //                           CONTROLE COMITS - GIT
     //************************************************************************************
-	//
-	//
+	// GIT COMMIT 14/10/2017 - 19:35
+	//************************************************************************************
 	//
 	//
 	//
@@ -32,9 +32,10 @@ class RelacaoController {
 	
 	    def nomeScript='marina'
 		def nomeApp='Paulo'
-	    //GerarAppService.criarApp("${nomeScript}","${nomeApp}");	
-          GerarAppService.gerarScript("scripts\\","ss","valeTudo")    		
+	      	
+          GerarAppService.gerarScript("scripts\\","Dalva","valeTudo")    		
 		  GerarAppService.gerarDiretorio("web-app\\","Dalva")
+		  GerarAppService.criarApp("valeTudo","${nomeApp}");
 		  
 	   
 	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
@@ -58,7 +59,7 @@ class RelacaoController {
 								 "\n}"+
 								 "\n}";			   
 			   
-			    def criarapp = new File("C:\\Users\\PauloCastro\\Desktop\\testes\\${valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(0,1).toUpperCase()+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(1,valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').size()).toLowerCase()}.groovy");	
+			    def criarapp = new File("web-app\\Dalva\\Paulo\\grails-app\\domain\\${valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(0,1).toUpperCase()+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(1,valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').size()).toLowerCase()}.groovy");	
 			        criarapp.write(objClasse); 
 			   
 			   contTab++
