@@ -6,18 +6,21 @@ class RelacaoController {
     def con = Sql.newInstance("jdbc:postgresql://localhost:5432/app","postgres","root","org.postgresql.Driver")
 	def sql = Sql.newInstance("jdbc:sapdb://localhost:7203/NSP","SAPNSP", "Branco09", "com.sap.dbtech.jdbc.DriverSapDB")
     def index = { redirect(action:list,params:params) }
-
+	
+    //*******************************************************************************************
     // Wosp-Core 12/10/2017 16:10 - Paulo Castro
 	// Umas das açoes que deverá ser feita é:
 	//      1. Mudar a pasta JDK onde nao podera ter espaco no nome - colocar direto no C:
 	//      2. Instalar MINISAP - MAXDB 
-    //*************************************************************************************
+    //********************************************************************************************
     //                           CONTROLE COMITS - GIT
-    //*************************************************************************************
+    //********************************************************************************************
 	// GIT COMMIT 14/10/2017 - 20:26 - Modificaçao criacao dinmica app e classes no dominio
-	//*************************************************************************************
+	//********************************************************************************************
 	// GIT COMMIT 14/10/2017 - - Modificacao: Gerar as visoes
-    //*************************************************************************************
+    //********************************************************************************************
+	//https://github.com/Paulo09/wos-P/blob/master/grails-app/controllers/RelacaoController.groovy
+	//********************************************************************************************
 	
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
