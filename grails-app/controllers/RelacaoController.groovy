@@ -32,8 +32,11 @@ class RelacaoController {
 	
 	    def nomeScript='marina'
 		def nomeApp='Paulo'
-	      	
-          GerarAppService.gerarScript("scripts\\","Dalva","valeTudo")    		
+	      //Diretorio - Dalva
+          //Nome Script - vale tudo 
+		  // ${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}
+          // ${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}+'.groovy' 		  
+          GerarAppService.gerarScript("scripts\\","Dalva","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id)}")    		
 		  GerarAppService.gerarDiretorio("web-app\\","Dalva")
 		  GerarAppService.criarApp("valeTudo","${nomeApp}");
 		  
