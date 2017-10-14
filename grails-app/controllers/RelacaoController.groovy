@@ -16,9 +16,7 @@ class RelacaoController {
     //*************************************************************************************
 	// GIT COMMIT 14/10/2017 - 20:26 - Modificaçao criacao dinmica app e classes no dominio
 	//*************************************************************************************
-	//
-	//
-	//
+	// GIT COMMIT 14/10/2017 - - Modificacao: Gerar as visoes
     //*************************************************************************************
 	
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
