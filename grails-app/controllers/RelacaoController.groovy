@@ -10,7 +10,16 @@ class RelacaoController {
     // Wosp-Core 12/10/2017 16:10 - Paulo Castro
 	// Umas das açoes que deverá ser feita é:
 	//      1. Mudar a pasta JDK onde nao podera ter espaco no nome - colocar direto no C:
-	//      2. Instalar MINISAP - MAXDB                                 
+	//      2. Instalar MINISAP - MAXDB 
+    //************************************************************************************
+    //                           CONTROLE COMITS - GIT
+    //************************************************************************************
+	//
+	//
+	//
+	//
+	//
+    //************************************************************************************ 	
     def allowedMethods = [delete:'POST', save:'POST', update:'POST']
 
     def list = {
