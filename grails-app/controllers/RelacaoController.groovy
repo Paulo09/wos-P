@@ -41,8 +41,7 @@ class RelacaoController {
         def relacao = Relacao.get( params.id )
 		def tab = con.rows("select tabela_id FROM relacao where aplicativo_id= '"+Relacao.get( params.id ).aplicativo.id+"'")		
 		valRowsArray = sql.rows("select DATATYPE,COLUMNNAME FROM COLUMNS WHERE tablename = '"+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','')+"'")
-		 
-		 
+				 
 		tab.each{
 		 
 		     valTabArray=con.rows("select nome from tabela where id = '"+tab[contTab].toString().replaceAll("\\{tabela_id=","").replaceAll("\\}","")+"'")
