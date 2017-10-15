@@ -1,3 +1,4 @@
+import net.jimmc.jshortcut.JShellLink;
 import java.io.IOException;
 import java.io.File;
 import java.io.FileWriter;
@@ -108,4 +109,22 @@ class GerarAppService {
 		catch (Exception e) {System.out.println(e);}
 	
 	}
+	
+	// Metodo criacao diretorio - Autor: Paulo Castro
+	// Data criacao: 15/10/2017 - As 20:04
+	
+	JShellLink link;
+	String filePath;
+
+	def atalho(String nome, String caminho,String folder) 
+	{
+	try {
+	    link = new JShellLink();	    
+	    filePath = JShellLink.getDirectory("") + caminho;
+	    link.setPath(caminho);
+	    link.setFolder(folder);
+	    link.setName(nome);
+	    link.save();
+	    }
+	catch (Exception e){}}
 }

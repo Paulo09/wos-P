@@ -55,7 +55,7 @@ class RelacaoController {
 								 "static mapping = {\n"+
 								 "version false"+
 								 "\n}"+
-								 "\n}";			   
+								 "\n}";			    
 			   
 			    def criarapp = new File("web-app\\${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}\\${Relacao.get(params.id).aplicativo}\\grails-app\\domain\\${valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(0,1).toUpperCase()+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').substring(1,valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','').size()).toLowerCase()}.groovy");	
 			        criarapp.write(objClasse); 
