@@ -89,6 +89,7 @@ class GerarAppService {
 	
 	try {
 			Runtime.getRuntime().exec("cmd /c grails "+nomeScript+" "+nomeApp);
+			Thread.sleep(6000);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

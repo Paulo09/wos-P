@@ -32,16 +32,16 @@ class RelacaoController {
 
     def show = {
 		     
-          GerarAppService.gerarScript("scripts\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
-		  GerarAppService.gerarDiretorio("web-app\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")
-		  GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${Relacao.get(params.id).aplicativo}");
-		  
-	   
-	     def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
-		 def valTab='';def valTabArray=[];def valRows ='';def valRowsArray =[]
-         def relacao = Relacao.get( params.id )
-		 def tab = con.rows("select tabela_id FROM relacao where aplicativo_id= '"+Relacao.get( params.id ).aplicativo.id+"'")		
-		 valRowsArray = sql.rows("select DATATYPE,COLUMNNAME FROM COLUMNS WHERE tablename = '"+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','')+"'")
+        GerarAppService.gerarScript("scripts\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
+		GerarAppService.gerarDiretorio("web-app\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")
+		GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${Relacao.get(params.id).aplicativo}");
+		
+	    def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
+		def valTab='';def valTabArray=[];def valRows ='';def valRowsArray =[]
+        def relacao = Relacao.get( params.id )
+		def tab = con.rows("select tabela_id FROM relacao where aplicativo_id= '"+Relacao.get( params.id ).aplicativo.id+"'")		
+		valRowsArray = sql.rows("select DATATYPE,COLUMNNAME FROM COLUMNS WHERE tablename = '"+valTabArray.toString().replaceAll('\\{nome=','').replaceAll('\\}','').replaceAll('\\[','').replaceAll('\\]','')+"'")
+		 
 		 
 		tab.each{
 		 
