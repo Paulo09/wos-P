@@ -15,7 +15,11 @@ class GerarAppService {
 	//                        Endereço Repositorio GitHub                            // 
 	//*******************************************************************************//
 	//    GitHub:https://github.com/Paulo09/wos-P/tree/master/grails-app/services    //
-    //    Data ultimo comit: 13/10/2017 - 14/:49                                     // 	
+    //    Data primeiro commit: 13/10/2017 - 14/:49                                  // 	
+	//*******************************************************************************//
+	//*******************************************************************************//
+	//    GitHub:https://github.com/Paulo09/wos-P/tree/master/grails-app/services    //
+    //    Data ultimo commit: 15/10/2017 - 22/:40                                    // 	
 	//*******************************************************************************//
 	
 	boolean transactional = false
