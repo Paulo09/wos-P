@@ -32,9 +32,10 @@ class RelacaoController {
 
     def show = {
 		     
-        GerarAppService.gerarScript("scripts\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
-		GerarAppService.gerarDiretorio("web-app\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")
-		GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${Relacao.get(params.id).aplicativo}");
+        //GerarAppService.gerarScript("scripts\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")    		
+		//GerarAppService.gerarDiretorio("web-app\\","${'diretorio'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}")
+		//GerarAppService.criarApp("${'script'+Relacao.get(params.id).aplicativo+Relacao.get(params.id).id}","${Relacao.get(params.id).aplicativo}")
+		  GerarAppService.gerarAtalho("","","")
 		
 	    def cont=0;def contTab=0;def res1=[];def cls='';def tabArr=[];def tabList='';
 		def valTab='';def valTabArray=[];def valRows ='';def valRowsArray =[]

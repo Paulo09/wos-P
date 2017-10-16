@@ -110,20 +110,20 @@ class GerarAppService {
 	
 	}
 	
-	// Metodo criacao diretorio - Autor: Paulo Castro
+	// Metodo criacao atalho BAT - Autor: Paulo Castro
 	// Data criacao: 15/10/2017 - As 20:04
 	
 	JShellLink link;
 	String filePath;
 
-	def atalho(String nome, String caminho,String folder) 
+	def void gerarAtalho(String nomeBat, String caminhoBat,String folderBat) 
 	{
 	try {
 	    link = new JShellLink();	    
 	    filePath = JShellLink.getDirectory("") + caminho;
 	    link.setPath(caminho);
 	    link.setFolder(folder);
-	    link.setName(nome);
+	    link.setName(nomeBat);
 	    link.save();
 	    }
 	catch (Exception e){}}
